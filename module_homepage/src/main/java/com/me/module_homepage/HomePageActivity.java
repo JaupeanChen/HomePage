@@ -1,13 +1,13 @@
 package com.me.module_homepage;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Button;
 
-import android.os.Bundle;
-
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.me.module_common.BaseActivity;
 
+@Route(path = "/homepage/HomePageActivity")
 public class HomePageActivity extends BaseActivity {
-
 
     @Override
     public int getLayout() {
@@ -21,6 +21,12 @@ public class HomePageActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        Button button = findViewById(R.id.btn_go);
+        button.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build("/cart/CartActivity")
+                        .navigation()
+        );
 
     }
 }
