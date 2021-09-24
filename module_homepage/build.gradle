@@ -11,6 +11,13 @@ android {
         versionCode 1
         versionName "1.0"
 
+        //Aroute配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -37,5 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //引入Common组件
-    implementation 'com.github.JaupeanChen:CommonModule:1.0.3'
+    implementation 'com.github.JaupeanChen:CommonModule:1.0.5'
+
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
 }
