@@ -2,4 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.me.module_homepage">
 
+    <application>
+        <activity
+            android:name=".HomePageActivity"
+            android:exported="true" />
+    </application>
+
 </manifest>
