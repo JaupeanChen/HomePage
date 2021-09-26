@@ -70,7 +70,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //引入Common组件
-    implementation 'com.github.JaupeanChen:CommonModule:1.0.9'
+    implementation 'com.github.JaupeanChen:CommonModule:1.1.0'
 
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
 }
