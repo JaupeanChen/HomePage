@@ -71,6 +71,8 @@ dependencies {
 
     //引入Common组件
     implementation 'com.github.JaupeanChen:CommonModule:1.1.0'
+    //引入export_cart暴露服务组件
+    implementation 'com.github.JaupeanChen.Cart:export_cart:1.0.8'
 
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
 }
