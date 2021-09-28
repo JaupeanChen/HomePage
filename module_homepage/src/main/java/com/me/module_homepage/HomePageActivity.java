@@ -3,8 +3,13 @@ package com.me.module_homepage;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.me.export_cart.CartRouteTable;
 import com.me.export_cart.CartServiceUtil;
 import com.me.module_common.BaseActivity;
 
@@ -33,5 +38,12 @@ public class HomePageActivity extends BaseActivity {
         TextView tvCount = findViewById(R.id.tv_count);
         String count = "购物车商品数量：" + CartServiceUtil.getCartInfo().getCount();
         tvCount.setText(count);
+
+        //获取购物车Fragment实例
+        Fragment fragment = (Fragment) ARouter.getInstance().build(CartRouteTable.PATH_CART_FRAGMENT_ROUTE).navigation();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+        fragmentTransaction.replace(R.id.fl_fragment, fragment);
+        fragmentTransaction.commit();
     }
 }
